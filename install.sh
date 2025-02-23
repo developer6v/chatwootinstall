@@ -341,7 +341,7 @@ function setup_chatwoot() {
   rvm install "ruby-3.3.3"
   rvm use 3.3.3 --default
 
-  git clone https://github.com/chatwoot/chatwoot.git
+  git clone https://github.com/developer6v/chatwoot.git
   cd chatwoot
   git checkout "$BRANCH"
   bundle
@@ -858,7 +858,7 @@ function upgrade() {
   cd chatwoot
 
   # Pull the latest version of the master branch
-  git checkout master && git pull
+  git checkout main && git pull
 
   # Ensure the ruby version is upto date
   # Parse the latest ruby version
