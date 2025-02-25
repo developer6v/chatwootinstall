@@ -355,6 +355,9 @@ function setup_chatwoot() {
   sed -i -e "/POSTGRES_PASSWORD/ s/=.*/=$pg_pass/" .env
   sed -i -e '/RAILS_ENV/ s/=.*/=$RAILS_ENV/' .env
   echo -en "\nINSTALLATION_ENV=linux_script" >> ".env"
+  
+  sed -i -e '/MAILER_SENDER_EMAIL/ s/=.*/=Chatwoot <no-reply@centralfabiocosta.com>/' .env
+
 
   rake assets:precompile RAILS_ENV=production NODE_OPTIONS="--max-old-space-size=4096 --openssl-legacy-provider"
 EOF
